@@ -1,0 +1,4 @@
+upstox
+selenium
+webdriver_manager
+page_objects
