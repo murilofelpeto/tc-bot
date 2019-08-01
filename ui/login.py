@@ -10,8 +10,8 @@ class Login:
     def doLogin(self):
         DriverUtils.selecionaBrowser()
         driver = DriverUtils.getDriver()
-        driver.set_page_load_timeout(10)
-        driver.implicitly_wait(10)
+        driver.set_page_load_timeout(30)
+        driver.implicitly_wait(30)
         driver.maximize_window()
 
         driver.get('https://www.thecrims.com')

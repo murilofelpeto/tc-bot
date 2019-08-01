@@ -3,6 +3,7 @@ from ui.rightMenu import RightMenu
 from ui.robbery import Robbery
 from ui.leftMenu import LeftMenu
 from ui.nightClub import NightClub
+from ui.hospital import Hospital
 
 login = Login()
 login.doLogin()
@@ -16,11 +17,11 @@ while True:
         robbery = Robbery(stamina)
         robbery.doRobbery()
     else:
-        #Recuperar stamina
         vicio = int(rightMenu.getVicio())
         if vicio >= 3:
-            #Hospital
-            pass
+            leftMenu.clickHospital()
+            hospital = Hospital()
+            hospital.desintoxicar()
         else:
             respeito = int(rightMenu.getRespeito())
             leftMenu.clickNighClub()

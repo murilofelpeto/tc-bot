@@ -16,7 +16,7 @@ class Robbery:
         self.driver = DriverUtils.getDriver()
 
     def doRobbery(self):
-        time.sleep(0.7)
+        time.sleep(1)
         robbery = RobberyPage(self.driver)
         self.robberMap = self.getRobberList(Select(robbery.robberySelect))
         self.selectRobbery(self.stamina, Select(robbery.robberySelect))
@@ -33,8 +33,7 @@ class Robbery:
         return robberyMap
 
     def selectRobbery(self, stamina, robberySelect):
-        orderedRobberMap = OrderedDict(
-            sorted(self.robberMap.items(), key=lambda k: k, reverse=True))
+        orderedRobberMap = OrderedDict(sorted(self.robberMap.items(), key=lambda k: k, reverse=True))
         for key in orderedRobberMap.keys():
             numbers = re.findall('\d+', orderedRobberMap[key])
             staminaGasta = int(numbers[0])
