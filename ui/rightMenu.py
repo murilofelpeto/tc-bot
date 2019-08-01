@@ -9,6 +9,7 @@ class RightMenu:
     def __init__(self):
         self.stamina = []
         self.vicio = []
+        self.respeito = []
         self.driver = DriverUtils.getDriver()
 
     def getStamina(self):
@@ -22,4 +23,10 @@ class RightMenu:
         vicioText = rightMenu.vicio.text
         self.vicio = re.findall('\d+', vicioText)
         return self.vicio[0]
+
+    def getRespeito(self):
+        rightMenu = RightMenuPage(self.driver)
+        respeitoText = rightMenu.respeito.text
+        self.respeito = re.findall('\d+', respeitoText)
+        return self.respeito[0]
 
